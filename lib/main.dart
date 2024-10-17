@@ -1,4 +1,5 @@
 import 'package:bitaqwa_app/presentation/screens/dashboard.dart';
+import 'package:bitaqwa_app/presentation/screens/doa_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
+      routes: {
+        '/': (context) => Dashboard(),
+        '/doa': (context) => DoaScreen(),
+      },
     );
   }
 }

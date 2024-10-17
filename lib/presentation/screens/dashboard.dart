@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     Widget Header() {
@@ -74,8 +74,8 @@ class Dashboard extends StatelessWidget {
 
     Widget CardMenus() {
       return Container(
-        padding: EdgeInsets.all(16),
         margin: EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           color: ColorApp.primary,
@@ -84,18 +84,23 @@ class Dashboard extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              Column(
-                children: [
-                  Image.asset("assets/images/ic_menu_doa.png"),
-                  Text(
-                    "Doa-Doa",
-                    style: TextStyle(
-                      fontFamily: "PoppinsSemiBold",
-                      fontSize: 14,
-                      color: ColorApp.white,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/doa');
+                },
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/ic_menu_doa.png"),
+                    Text(
+                      "Doa-Doa",
+                      style: TextStyle(
+                        fontFamily: "PoppinsSemiBold",
+                        fontSize: 14,
+                        color: ColorApp.white,
+                      ),
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
               SizedBox(
                 width: 12,
@@ -110,7 +115,7 @@ class Dashboard extends StatelessWidget {
                       fontSize: 14,
                       color: ColorApp.white,
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -126,7 +131,7 @@ class Dashboard extends StatelessWidget {
                       fontSize: 14,
                       color: ColorApp.white,
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
@@ -142,7 +147,7 @@ class Dashboard extends StatelessWidget {
                       fontSize: 14,
                       color: ColorApp.white,
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
@@ -162,44 +167,33 @@ class Dashboard extends StatelessWidget {
                 "Inspirasi",
                 style: TextStyle(
                   fontFamily: "PoppinsSemiBold",
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             ),
-            SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8),
             Image.asset(
               "assets/images/img_inspiration.png",
-              fit: BoxFit.cover,
             ),
-            SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8),
             Image.asset(
               "assets/images/img_inspiration_2.jpeg",
-              fit: BoxFit.cover,
             ),
-            SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8),
             Image.asset(
               "assets/images/img_inspiration_3.jpeg",
-              fit: BoxFit.cover,
             ),
-            SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8),
             Image.asset(
               "assets/images/img_inspiration_4.jpeg",
-              fit: BoxFit.cover,
             ),
-            SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8),
             Image.asset(
               "assets/images/img_inspiration_5.jpeg",
-              fit: BoxFit.cover,
+            ),
+            SizedBox(height: 8),
+            Image.asset(
+              "assets/images/img_inspiration_6.jpeg",
             ),
           ],
         ),
